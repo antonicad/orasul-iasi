@@ -160,16 +160,16 @@ sup {
 
 .first-ad {
     position: relative;
-    width: 15%;
-    background-image: url("../assets/banner.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 45vh;
-    margin-left: 7.5%;
+    width: 25%;
+    height: auto;
+    margin-left: 2.5%;
     margin-top: 5%;
 }
 
+.first-ad img {
+    width: 100%;
+    height: auto;
+}
 
 .for-ad {
     display: flex;

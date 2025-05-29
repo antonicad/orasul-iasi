@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const AdBox = ({ src, alt }) => {
   const [visible, setVisible] = useState(true);
 
-  if (!visible) return null;
 
   return (
     <div className="article-ad">

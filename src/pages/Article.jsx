@@ -7,6 +7,7 @@ import logo from "../assets/logoip.png";
 import ad1 from "../assets/spot-difference-dog.png";
 import ad2 from "../assets/spot-difference-lamp.png";
 import ad3 from "../assets/heinz-pour.png";
+import ad4 from "../assets/banner.jpg";
 import { useState } from "react";
 import AdBox from './AdBox';
 
@@ -83,7 +84,8 @@ const Article = () => {
 
         {showAd && (
           <div className="first-ad">
-            <button className="close-ad" onClick={() => setShowAd(false)}>×</button>
+            <button className="close-ad" onClick={() => setShowAd(true)}>×</button>
+            <img src={ad4}></img>
           </div>
         )}
       </div>
