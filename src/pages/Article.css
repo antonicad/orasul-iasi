@@ -47,6 +47,7 @@
     margin-bottom: -12vh;
     font-size: .7rem;
     text-align: center;
+    position: relative;
 }
 
 .share img {
@@ -79,7 +80,8 @@
 }
 
 .article-content {
-    margin-top: 7vh;
+    margin-top: 10%;
+    position: relative;
 }
 
 .article-content .chestionar {

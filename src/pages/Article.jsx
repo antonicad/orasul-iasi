@@ -22,12 +22,12 @@ const Article = () => {
       </div>
       <div className="banner">
       </div>
-      <div className="for-ad">
-        <div className="the-article">
-          <div className="header">
+                <div className="header">
             <h1>Orașul Iași</h1>
             <p>written by Iulian Paraschiv • 30 May 2025</p>
           </div>
+      <div className="for-ad">
+        <div className="the-article">
           <div className="article-content">
             <div className="share">
               Share:
