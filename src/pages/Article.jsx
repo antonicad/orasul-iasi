@@ -8,15 +8,54 @@ import ad1 from "../assets/spot-difference-dog.png";
 import ad2 from "../assets/spot-difference-lamp.png";
 import ad3 from "../assets/heinz-pour.png";
 import ad4 from "../assets/banner.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AdBox from './AdBox';
+
+const COOLDOWN_MINUTES = 10;
 
 
 const Article = () => {
   const [showAd, setShowAd] = useState(true);
+  const [minutesLeft, setMinutesLeft] = useState(null);
+  const [isCooldown, setIsCooldown] = useState(false);
+
+    useEffect(() => {
+    const lastVisit = localStorage.getItem("lastVisit");
+
+    if (lastVisit) {
+      const diffMs = Date.now() - parseInt(lastVisit, 10);
+      const diffMinutes = Math.floor(diffMs / 60000);
+
+      if (diffMinutes < COOLDOWN_MINUTES) {
+        setIsCooldown(true);
+        setMinutesLeft(COOLDOWN_MINUTES - diffMinutes);
+      } else {
+        setIsCooldown(false);
+        localStorage.removeItem("lastVisit");
+      }
+    } else {
+      // Prima vizită – salvează timestamp
+      localStorage.setItem("lastVisit", Date.now().toString());
+    }
+  }, []);
 
   return (
     <>
+     {isCooldown && (
+      <div className="cooldown-div">
+        <span>
+        <h2>Chestionarul trebuie completat cât mai sincer.</h2>
+        <p>Temporar nu mai poți citi articolul. <br></br> ~ {minutesLeft} minute</p>
+        </span>
+        <Link to="https://docs.google.com/forms/d/1O5Cn_4WluQAJ39c_4IisWq1nTLzow6SS4i5M8dozuys"><button>Către chestionar</button></Link>
+        <span>
+        <p>Mulțumesc pentru timpul acordat!</p>
+        </span>
+      </div>
+      )}
+
+      {!isCooldown && (
+      <>
       <div className="navbar">
         <img src={logo}></img>
       </div>
@@ -94,6 +133,8 @@ const Article = () => {
       <div className="footer">
         <p>Website made by Antonică Denis - <Link to="mailto:antonica.deniscosmin@gmail.com">antonica.deniscosmin@gmail.com</Link></p>
       </div>
+      </>
+      )}
     </>
   );
 };
