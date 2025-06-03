@@ -37,6 +37,18 @@ const Article = () => {
       // Prima vizită – salvează timestamp
       localStorage.setItem("lastVisit", Date.now().toString());
     }
+
+      const handlePageShow = (event) => {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+
+  window.addEventListener("pageshow", handlePageShow);
+
+  return () => {
+    window.removeEventListener("pageshow", handlePageShow);
+  };
   }, []);
 
   return (
