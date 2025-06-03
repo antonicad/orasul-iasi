@@ -109,7 +109,7 @@ const Article = () => {
             <br /><br />
             Parcul Copou, este un alt simbol al orașului, fiind cel mai vechi parc din Iași, cât și cel mai mare parc urban și din zona centrală a regiunii de nord a orașului. Parcul datează din prima jumătate a secolului al XIX-lea, amenajarea sa începând în anii 1833-1834 sub domnia lui Mihail Sturza și are o suprafață de aproximativ zece hectare.<sup>4</sup>  În centrul parcului este situat unul dintre cele mai vechi monumente din istoria modernă a țării, Obeliscul cu lei, ridicat după planurile lui Gheorghe Asachi în cinstea domnitorului moldovean și a puterilor suzerane și protectoare sub a căror influență se aflau Principatele Române.<sup>5</sup>  De altfel, parcul găzduiește simbolul poezii eminesciene, anume Parcul lui Eminescu, dar și un întreg muzeu dedicat poetului.
             <br /><br />
-            Concluzionăm că orașul Iași oferă o diversitate culturală și istorică, pusă la dispoziția vizitatorilor. În Iași ve-ți găsi locuri primitoare, oameni prietenoși, o arhitectură de la clasic la modern, o natură vie și locuri în care vă ve-ți crea amintiri de poveste.
+            Concluzionăm că orașul Iași oferă o diversitate culturală și istorică, pusă la dispoziția vizitatorilor. În Iași veți găsi locuri primitoare, oameni prietenoși, o arhitectură de la clasic la modern, o natură vie și locuri în care vă veți crea amintiri de poveste.
             <br /><br />
             Te așteptăm la Iași!
             </p>
