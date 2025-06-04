@@ -19,26 +19,27 @@ const Article = () => {
   const [minutesLeft, setMinutesLeft] = useState(null);
   const [isCooldown, setIsCooldown] = useState(false);
 
-    useEffect(() => {
-    const lastVisit = localStorage.getItem("lastVisit");
+useEffect(() => {
+  const lastVisit = localStorage.getItem("lastVisit");
 
-    if (lastVisit) {
-      const diffMs = Date.now() - parseInt(lastVisit, 10);
-      const diffMinutes = Math.floor(diffMs / 60000);
+  if (lastVisit) {
+    const diffMs = Date.now() - parseInt(lastVisit, 10);
+    const diffMinutes = Math.floor(diffMs / 60000);
 
-      if (diffMinutes < COOLDOWN_MINUTES) {
-        setIsCooldown(true);
-        setMinutesLeft(COOLDOWN_MINUTES - diffMinutes);
-      } else {
-        setIsCooldown(false);
-        localStorage.removeItem("lastVisit");
-      }
+    if (diffMinutes < COOLDOWN_MINUTES) {
+      setIsCooldown(true);
+      setMinutesLeft(COOLDOWN_MINUTES - diffMinutes);
     } else {
-      // Prima vizită – salvează timestamp
-      localStorage.setItem("lastVisit", Date.now().toString());
+      setIsCooldown(false);
+      localStorage.removeItem("lastVisit");
     }
+  } else {
+    // Prima vizită – salvează timestamp
+    localStorage.setItem("lastVisit", Date.now().toString());
+  }
 
-      const handlePageShow = (event) => {
+  // ✅ Aici adaugi event listener-ul
+  const handlePageShow = (event) => {
     if (event.persisted) {
       window.location.reload();
     }
@@ -46,10 +47,11 @@ const Article = () => {
 
   window.addEventListener("pageshow", handlePageShow);
 
+  // ✅ Cleanup: scoți event listener-ul la demontare
   return () => {
     window.removeEventListener("pageshow", handlePageShow);
   };
-  }, []);
+}, []);
 
   return (
     <>
